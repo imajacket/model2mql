@@ -16,7 +16,7 @@ func NewConvertor[T any](model T) *Convertor[T] {
 	}
 }
 
-func (c *Convertor[T]) Parse(model T) (string, error) {
+func (c *Convertor[T]) Convert(model T) (string, error) {
 	var query []string
 
 	val := reflect.ValueOf(model)

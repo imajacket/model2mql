@@ -12,7 +12,7 @@ func TestConvertor(t *testing.T) {
 
 	c := NewConvertor(TestStruct{})
 
-	response, err := c.Parse(TestStruct{
+	response, err := c.Convert(TestStruct{
 		UseridContains: 1,
 		IdGte:          1,
 		TitleNe:        "Test",
