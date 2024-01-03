@@ -22,14 +22,14 @@ type Search struct {
 }
 
 c := NewConstructor(Search{})
-response, _ := c.Parse(
+response, _ := c.Convert(
     Search{
         IdGte: 4,
         NameContains: Bart
     }
 )
 
-w, err := mql.Convert(response,User{}, mql.WithPgPlaceholders())
+w, err := mql.Parse(response,User{}, mql.WithPgPlaceholders())
 if err != nil {
   return nil, err
 }
