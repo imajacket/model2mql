@@ -29,7 +29,7 @@ response, _ := c.Parse(
     }
 )
 
-w, err := mql.Parse(response,User{}, mql.WithPgPlaceholders())
+w, err := mql.Convert(response,User{}, mql.WithPgPlaceholders())
 if err != nil {
   return nil, err
 }
